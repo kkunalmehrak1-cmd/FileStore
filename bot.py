@@ -19,13 +19,13 @@ class Bot(Client):
     def __init__(self):
         super().__init__(
             name="Bot",
-            api_hash=API_HASH,
-            api_id=APP_ID,
+            api_hash=8dfd82cadc7adc2fadab61d9772a958e,
+            api_id=24630953,
             plugins={
                 "root": "plugins"
             },
             workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN
+            bot_token=8384833469:AAHu4SEvwE1UCua1mgggH6zDOuxhvZJJx14
         )
         self.LOGGER = LOGGER
 
@@ -35,7 +35,7 @@ class Bot(Client):
         self.uptime = datetime.now()
 
         try:
-            db_channel = await self.get_chat(CHANNEL_ID)
+            db_channel = await self.get_chat(-1002976850039)
             self.db_channel = db_channel
             test = await self.send_message(chat_id = db_channel.id, text = "Test Message")
             await test.delete()
